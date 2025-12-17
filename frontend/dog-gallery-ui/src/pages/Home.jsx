@@ -102,19 +102,26 @@ export default function Home() {
 
     return (
         <div className="container-fluid mt-4 px-4">
-            <div className="row">
-                <div className="col-4 col-md-3 mb-4">
-                    <h4 className="mb-3">Dog Breeds</h4>
+            <div className="row align-items-center g-2 mb-4">
+
+                {/* Title */}
+                <div className="col-5 col-md-3">
+                    <h4 className="mb-0">Dog Breeds</h4>
                 </div>
-                <div className="col-3 mb-3 col-md-3 search-wrapper">
-                    <input type="text"
+
+                {/* Search */}
+                <div className="col-7 col-md-3">
+                    <input
+                        type="text"
                         className="form-control search-input"
                         placeholder="Search breeds..."
                         value={search}
-                        onChange={e => setSearch(e.target.value)} />
+                        onChange={e => setSearch(e.target.value)}
+                    />
                 </div>
 
-                <div className="col-3 col-md-3">
+                {/* Filter */}
+                <div className="col-6 col-md-3">
                     <select
                         className="form-select custom-dropdown"
                         value={filter}
@@ -127,7 +134,7 @@ export default function Home() {
                 </div>
 
                 {/* Sort */}
-                <div className="col-2 col-md-3">
+                <div className="col-6 col-md-3">
                     <select
                         className="form-select custom-dropdown"
                         value={sort}
@@ -140,6 +147,7 @@ export default function Home() {
                 </div>
 
             </div>
+
 
             {/* Recently Viewed Breeds */}
             {recentBreeds.length > 0 && (
@@ -220,22 +228,62 @@ export default function Home() {
 
             {/* Pagination */}
             {totalPages > 1 && (
-                <nav className="d-flex justify-content-center mt-4">
-                    <ul className="pagination">
+                // <nav className="d-flex justify-content-center mt-4">
+                //     <ul className="pagination">
 
+                //         <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
+                //             <button
+                //                 className="page-link"
+                //                 onClick={() => setCurrentPage(prev => prev - 1)}
+                //             >
+                //                 Previous
+                //             </button>
+                //         </li>
+
+                //         {[...Array(totalPages)].map((_, i) => (
+                //             <li
+                //                 key={i}
+                //                 className={`page-item ${currentPage === i + 1 ? "active" : ""}`}
+                //             >
+                //                 <button
+                //                     className="page-link"
+                //                     onClick={() => setCurrentPage(i + 1)}
+                //                 >
+                //                     {i + 1}
+                //                 </button>
+                //             </li>
+                //         ))}
+
+                //         <li className={`page-item ${currentPage === totalPages ? "disabled" : ""}`}>
+                //             <button
+                //                 className="page-link"
+                //                 onClick={() => setCurrentPage(prev => prev + 1)}
+                //             >
+                //                 Next
+                //             </button>
+                //         </li>
+
+                //     </ul>
+                // </nav>
+
+                <nav className="d-flex justify-content-center mt-4">
+                    <ul className="pagination pagination-responsive">
+
+                        {/* Previous */}
                         <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
                             <button
                                 className="page-link"
                                 onClick={() => setCurrentPage(prev => prev - 1)}
                             >
-                                Previous
+                                Prev
                             </button>
                         </li>
 
+                        {/* Page Numbers (Desktop Only) */}
                         {[...Array(totalPages)].map((_, i) => (
                             <li
                                 key={i}
-                                className={`page-item ${currentPage === i + 1 ? "active" : ""}`}
+                                className={`page-item page-number ${currentPage === i + 1 ? "active" : ""}`}
                             >
                                 <button
                                     className="page-link"
@@ -246,6 +294,14 @@ export default function Home() {
                             </li>
                         ))}
 
+                        {/* Mobile Page Info */}
+                        <li className="page-item page-info">
+                            <span className="page-link">
+                                {currentPage} / {totalPages}
+                            </span>
+                        </li>
+
+                        {/* Next */}
                         <li className={`page-item ${currentPage === totalPages ? "disabled" : ""}`}>
                             <button
                                 className="page-link"

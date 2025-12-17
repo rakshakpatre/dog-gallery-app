@@ -47,7 +47,7 @@
 /* Search Input */
 .search-input {
   width: 100%;
-  padding: 14px 20px;
+  padding: 12px 18px;
   border-radius: 50px;
   border: 1px solid #ddd;
   font-size: 16px;
@@ -406,8 +406,90 @@ body.dark .pagination .page-link:hover {
 
 @media (max-width: 576px) {
   .custom-dropdown {
-    max-width: 140px;
+    max-width: 100%;
     font-size: 13px;
     padding: 6px 12px;
   }
+
+  .search-input{
+    max-width: 100%;
+    font-size: 13px;
+    padding: 6px 12px;
+    margin-bottom: 10px;
+  }
+}
+
+.custom-navbar {
+  background: linear-gradient(180deg, #0f172a, #020617);
+  padding: 0.6rem 0;
+}
+
+.custom-navbar .navbar-brand {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.active-btn {
+  background-color: white;
+  color: black !important;
+}
+
+/* Dark mode support */
+body.dark .search-input,
+body.dark .custom-dropdown {
+  background-color: #111;
+  color: white;
+  border: 1px solid #333;
+}
+
+body.dark .search-input::placeholder {
+  color: #aaa;
+}
+
+/* Pagination base */
+.pagination-responsive {
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* Mobile: hide page numbers */
+@media (max-width: 576px) {
+  .page-number {
+    display: none;
+  }
+
+  .page-info {
+    display: block;
+  }
+
+  .pagination-responsive {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+/* Desktop: hide page info */
+@media (min-width: 577px) {
+  .page-info {
+    display: none;
+  }
+}
+
+/* Rounded buttons */
+.page-link {
+  border-radius: 10px;
+  padding: 6px 12px;
+}
+
+/* Dark mode pagination */
+body.dark .page-link {
+  background-color: #111;
+  color: white;
+  border: 1px solid #333;
+}
+
+body.dark .page-item.active .page-link {
+  background-color: #fff;
+  color: #000;
 }
