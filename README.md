@@ -5,15 +5,16 @@ A modern, responsive Dog Gallery application built with **React + FastAPI**.
 ---
 
 ## 🚀 Live Demo
-- Frontend: https://dog-gallery.vercel.app
-- Backend API: https://dog-gallery-backend.onrender.com
+- Frontend: https://dog-gallery-app-six.vercel.app
+- Backend API: https://dog-gallery-app-8ry6.onrender.com
+- Swagger Docs: https://dog-gallery-app-8ry6.onrender.com/docs
 
 ---
 
 ## 🛠 Tech Stack
 
 ### Frontend
-- React (Vite)
+- React (Vite)  
 - Bootstrap
 - Axios
 - React Router
