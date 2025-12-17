@@ -228,48 +228,8 @@ export default function Home() {
 
             {/* Pagination */}
             {totalPages > 1 && (
-                // <nav className="d-flex justify-content-center mt-4">
-                //     <ul className="pagination">
-
-                //         <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
-                //             <button
-                //                 className="page-link"
-                //                 onClick={() => setCurrentPage(prev => prev - 1)}
-                //             >
-                //                 Previous
-                //             </button>
-                //         </li>
-
-                //         {[...Array(totalPages)].map((_, i) => (
-                //             <li
-                //                 key={i}
-                //                 className={`page-item ${currentPage === i + 1 ? "active" : ""}`}
-                //             >
-                //                 <button
-                //                     className="page-link"
-                //                     onClick={() => setCurrentPage(i + 1)}
-                //                 >
-                //                     {i + 1}
-                //                 </button>
-                //             </li>
-                //         ))}
-
-                //         <li className={`page-item ${currentPage === totalPages ? "disabled" : ""}`}>
-                //             <button
-                //                 className="page-link"
-                //                 onClick={() => setCurrentPage(prev => prev + 1)}
-                //             >
-                //                 Next
-                //             </button>
-                //         </li>
-
-                //     </ul>
-                // </nav>
-
                 <nav className="d-flex justify-content-center mt-4">
                     <ul className="pagination pagination-responsive">
-
-                        {/* Previous */}
                         <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
                             <button
                                 className="page-link"
@@ -279,7 +239,6 @@ export default function Home() {
                             </button>
                         </li>
 
-                        {/* Page Numbers (Desktop Only) */}
                         {[...Array(totalPages)].map((_, i) => (
                             <li
                                 key={i}
@@ -294,14 +253,12 @@ export default function Home() {
                             </li>
                         ))}
 
-                        {/* Mobile Page Info */}
                         <li className="page-item page-info">
                             <span className="page-link">
                                 {currentPage} / {totalPages}
                             </span>
                         </li>
 
-                        {/* Next */}
                         <li className={`page-item ${currentPage === totalPages ? "disabled" : ""}`}>
                             <button
                                 className="page-link"
