@@ -70,7 +70,7 @@ A modern, responsive Dog Gallery application built with **React + FastAPI**.
 
 | Method | Endpoint | Description |
 |------|---------|------------|
-| GET | / | Health check |
+| GET | / | Bckend Status check |
 | POST | /like | Like image |
 | DELETE | /like | Unlike image |
 | GET | /likes | Get liked images |

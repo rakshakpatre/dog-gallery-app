@@ -59,6 +59,10 @@ export default function Home() {
         });
     }, []);
 
+    const likeMap = {};
+    likedStats.forEach(item => {
+        likeMap[item.breed] = item.count;
+    });
 
     const filteredBreeds = breeds.filter(b =>
         b.toLowerCase().includes(search.toLowerCase())
@@ -66,31 +70,32 @@ export default function Home() {
 
     let processedBreeds = [...filteredBreeds];
 
-    if (filter === "liked") {
-        const likedSet = new Set(likedStats.map(b => b.breed));
-        processedBreeds = processedBreeds.filter(b => likedSet.has(b));
-    }
+// FILTER
+if (filter === "liked") {
+  processedBreeds = processedBreeds.filter(
+    breed => likeMap[breed] > 0
+  );
+}
 
-    if (filter === "recent") {
-        processedBreeds = recentBreeds;
-    }
+if (filter === "recent") {
+  processedBreeds = recentBreeds;
+}
 
-    if (sort === "az") {
-        processedBreeds.sort();
-    }
+// SORT
+if (sort === "az") {
+  processedBreeds.sort();
+}
 
-    if (sort === "za") {
-        processedBreeds.sort().reverse();
-    }
+if (sort === "za") {
+  processedBreeds.sort().reverse();
+}
 
-    if (sort === "likes") {
-        const likeMap = {};
-        likedStats.forEach(b => (likeMap[b.breed] = b.count));
+if (sort === "likes") {
+  processedBreeds = processedBreeds
+    .filter(breed => likeMap[breed] > 0) 
+    .sort((a, b) => (likeMap[b] || 0) - (likeMap[a] || 0));
+}
 
-        processedBreeds.sort(
-            (a, b) => (likeMap[b] || 0) - (likeMap[a] || 0)
-        );
-    }
 
     const startIndex = (currentPage - 1) * breedsPerPage;
     const totalPages = Math.ceil(processedBreeds.length / breedsPerPage);
@@ -106,7 +111,7 @@ export default function Home() {
 
                 {/* Title */}
                 <div className="col-5 col-md-3">
-                    <h4 className="mb-0">Dog Breeds</h4>
+                    <h4 className="mb-0"><span>Dog Breeds</span></h4>
                 </div>
 
                 {/* Search */}
@@ -182,7 +187,7 @@ export default function Home() {
             {loading && (
                 <div className="text-center mt-5">
                     <div className="spinner-border text-dark" role="status"></div>
-                    <p className="mt-2 text-muted">Loading dog breeds...</p>
+                    <p className="mt-2">Loading dog breeds...</p>
                 </div>
             )}
 
@@ -221,7 +226,7 @@ export default function Home() {
             </div>
 
             {!loading && !error && paginatedBreeds.length === 0 && (
-                <p className="text-center text-muted mt-5">
+                <p className="home-liked text-center mt-5">
                     No breeds found. Try a different search.
                 </p>
             )}

@@ -18,12 +18,10 @@ export default function Navbar({ darkMode, setDarkMode }) {
 
         <div className="d-flex align-items-center justify-content-between w-100">
           <Link className="navbar-brand fw-bold text-white" to="/">
-            DOG GALLERY
+            DOG GALLERY 🐾
           </Link>
 
           <div className="d-flex align-items-center gap-2">
-
-
             <button
               className="btn btn-outline-light rounded-pill"
               onClick={() => setDarkMode(!darkMode)}
@@ -42,10 +40,8 @@ export default function Navbar({ darkMode, setDarkMode }) {
               ❤️
               <span className="d-none d-sm-inline">Liked Images</span>
             </Link>
-
           </div>
         </div>
-
       </div>
     </nav>
   );

@@ -3,6 +3,7 @@ import API from "../services/api";
 
 export default function LikedImages() {
   const [likes, setLikes] = useState([]);
+  const [zoomImage, setZoomImage] = useState(null);
 
   useEffect(() => {
     API.get("/likes").then(res => setLikes(res.data));
@@ -20,14 +21,21 @@ export default function LikedImages() {
                 src={item.image_url}
                 alt="liked dog"
                 className="gallery-image"
+                onClick={() => setZoomImage(item.image_url)}
               />
             </div>
           </div>
         ))}
       </div>
 
+      {zoomImage && (
+                <div className="zoom-overlay" onClick={() => setZoomImage(null)}>
+                    <img src={zoomImage} className="zoom-image" />
+                </div>
+            )}
+
       {likes.length === 0 && (
-        <p className="text-muted text-center mt-5">
+        <p className="text-center mt-5">
           No liked images yet
         </p>
       )}

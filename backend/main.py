@@ -105,25 +105,6 @@ def get_viewed(db: Session = Depends(get_db)):
 
     return [b.breed for b in breeds]
 
-# @app.get("/stats/liked-breeds")
-# def liked_breeds_stats(db: Session = Depends(get_db)):
-#     results = (
-#         db.query(
-#             LikedImage.breed,
-#             db.func.count(LikedImage.id).label("likes")
-#         )
-#         .group_by(LikedImage.breed)
-#         .order_by(db.func.count(LikedImage.id).desc())
-#         .all()
-#     )
-
-#     return[
-#         {"breed": breed, "likes":likes}
-#         for breed, likes in results
-#     ]
-
-from sqlalchemy import func
-
 @app.get("/stats/liked-breeds")
 def liked_breeds_stats(db: Session = Depends(get_db)):
     results = (
@@ -142,7 +123,7 @@ def liked_breeds_stats(db: Session = Depends(get_db)):
     ]
 
 
-# ------ HEALTH CHECK --------
+# ------ BACKEND STATUS CHECK --------
 
 @app.get("/")
 def root():
