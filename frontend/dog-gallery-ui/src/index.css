@@ -1,0 +1,413 @@
+.dog-image {
+  height: 220px;          
+  width: 100%;
+  object-fit: cover;      
+}
+
+/* Breed Image Card */
+.breed-image-card {
+  height: 200px;
+  width: 100%;
+  border-radius: 14px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+/* Dark overlay */
+.breed-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Breed title */
+.breed-title {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+/* Hover effect */
+.breed-image-card:hover {
+  transform: scale(1.05);
+}
+
+/* Search Bar Wrapper */
+.search-wrapper {
+  max-width: 420px;
+}
+
+/* Search Input */
+.search-input {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 50px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Focus effect */
+.search-input:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 10px 30px rgba(13, 110, 253, 0.25);
+}
+
+/* Placeholder */
+.search-input::placeholder {
+  color: #999;
+}
+
+/* Custom Navbar */
+.custom-navbar {
+  background: linear-gradient(135deg, #1f2933, #111827);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  padding: 14px 0;
+}
+
+/* Brand hover */
+.navbar-brand {
+  letter-spacing: 0.5px;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-brand:hover {
+  opacity: 0.85;
+}
+
+/* Liked button */
+.active-btn {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: #fff 
+}
+
+.btn-outline-light:hover {
+  background-color: #ffffff;
+  color: #000;
+}
+
+.page-link {
+  color: #111;
+  border-radius: 8px;
+}
+
+.page-item.active .page-link {
+  background-color: #111;
+  border-color: #111;
+}
+
+/* Breed Image Gallery */
+.gallery-card {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: scale(1.04);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Like button overlay */
+.like-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.like-btn:hover {
+  transform: scale(1.1);
+}
+
+.like-btn.liked {
+  background: #dc3545;
+  color: #fff;
+}
+
+/* Share button overlay */
+.share-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.share-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Recently Viewed Horizontal Scroll */
+.recent-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.recent-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.recent-scroll::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+/* Recently viewed card */
+.recent-card {
+  min-width: 160px;
+}
+
+.recent-image {
+  height: 100px;
+  width: 160px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.recent-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Search Bar */
+.search-pill {
+  border-radius: 50px;
+  padding: 14px 22px;
+  border: 1px solid #ddd;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.search-pill:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgba(13,110,253,.15);
+}
+
+/* Dropdowns */
+.custom-dropdown {
+  border-radius: 50px;
+  padding: 12px 18px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: all 0.25s ease;
+}
+
+.custom-dropdown:hover {
+  border-color: #0d6efd;
+}
+
+.custom-dropdown:focus {
+  box-shadow: 0 0 0 0.25rem rgba(13,110,253,.15);
+  border-color: #0d6efd;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-mode .card,
+.dark-mode .breed-image-card {
+  background-color: #1e1e1e;
+}
+
+.dark-mode input,
+.dark-mode select {
+  background-color: #1e1e1e;
+  color: white;
+  border-color: #333;
+}
+
+.dark-mode .navbar {
+  background: linear-gradient(135deg, #111, #222);
+}
+
+.zoom-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.zoom-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.toast {
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+
+/* Toast Position */
+.toast-container-custom {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+/* Toast Box */
+.toast-custom {
+  background: rgba(30, 30, 30, 0.95);
+  color: #ffffff;
+  padding: 14px 18px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 240px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Close Button */
+.toast-close {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body.dark {
+  background-color: #0f0f0f;
+  color: white;
+}
+
+body.dark .toast-custom {
+  background: white;
+  color: black;
+}
+
+
+.breed-subtitle {
+  color: #6c757d; 
+}
+
+body.dark .breed-subtitle {
+  color: #ffffff; 
+  opacity: 0.85;  
+}
+
+body.dark {
+  background-color: #0f0f0f;
+  color: #ffffff;
+}
+
+body.dark .card,
+body.dark .modal-content,
+body.dark .dropdown-menu {
+  background-color: #1c1c1c;
+  color: #ffffff;
+}
+
+body.dark .form-control {
+  background-color: #1c1c1c;
+  color: #ffffff;
+  border-color: #333;
+}
+
+body.dark .form-control::placeholder {
+  color: #aaaaaa;
+}
+body.dark .custom-dropdown {
+  background-color: #1c1c1c;
+  color: #ffffff;
+  border-color: #333;
+}
+
+body.dark .pagination .page-link {
+  border-radius: 10px;
+  margin: 0 4px;
+  min-width: 42px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+body.dark .pagination .page-link:hover {
+  background-color: #333;
+  color: #ffffff;
+}
+
+@media (max-width: 576px) {
+  .custom-dropdown {
+    max-width: 140px;
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+}
